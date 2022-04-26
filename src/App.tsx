@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState} from 'react';
-import { Typography, TextField, Button, Divider, InputLabel } from '@mui/material';
+import { Typography, TextField, Button, Divider,  Grid } from '@mui/material';
 import TodosList from './TodosList'
 
 const styles = {
@@ -64,48 +64,41 @@ const App = () => {
             <Typography variant="h5" gutterBottom component="div">
                 ReactTS Search-List Mui template
             </Typography> <p>&nbsp;</p>
-            <div>
-                <InputLabel htmlFor='search' variant='outlined'
-                >
-                    Search:
-                </InputLabel>
-                <TextField variant='standard'
+
+            <Grid container={true}>
+                <TextField variant='standard' margin="dense"  label="Search"
                     id='search'
                     type="text"
                     value={term}
                     onChange={(e) => setTerm(e.target.value)}
                 />
 
-                <Button variant='outlined'  size='small' style={{minWidth: '100px'}}
+                <Button  size='small'
                     onClick={handleSearch}>
                         Search
                 </Button>
-                <Button variant='outlined'  size='small' style={{minWidth: '100px'}}
+                <Button size='small'
                     onClick={resetSearchField}>
                      Clear
                 </Button>
-            </div>
+            </Grid>
 
-            <div>
-                <InputLabel htmlFor='add'  variant='outlined'
-                >
-                    Create:
-                </InputLabel>
-                <TextField variant='standard'
+            <Grid container={true}>
+                <TextField variant='standard'  margin="dense" label="Add"
                     id='add'
                     type='text'
                     value={newTask}
                     onChange={(e) => setNewTask(e.target.value)}
                 />
-                <Button variant='outlined' size='small' style={{minWidth: '100px'}}
+                <Button size='small'
                     onClick={handleAdd}>
                         Add
                 </Button>
-                <Button variant='outlined' size='small'  style={{minWidth: '100px'}}
+                <Button size='small'
                     onClick={resetAddField}>
                     Clear
                 </Button>
-            </div>
+            </Grid>
 
             <p>&nbsp;</p>
             <Divider />

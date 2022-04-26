@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { IconButton } from '@mui/material';
+import DeleteForeverIcon from '@mui/icons-material/Delete';
 
 interface Props {
     id: number,
@@ -11,11 +11,9 @@ const Task: FC<Props> = ({ id, task, onDelete }) => {
 
     return (
         <>
-            <IconButton aria-label="delete" color="primary" size="small"
-               onClick={() => onDelete(id)}
-            >
-                X
-            </IconButton>
+            <DeleteForeverIcon
+                 onClick={() => onDelete(id)}
+            />
 
             &nbsp; {task}
         </>
